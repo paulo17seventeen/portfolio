@@ -1,0 +1,741 @@
+/* Variáveis de estilo (Cores, fontes, etc.) */
+:root {
+    --primary-color: #29b6f6; /* Azul vibrante para elementos principais */
+    --secondary-color: #64b5f6; /* Azul mais claro para hover e destaques */
+    --accent-color: #03a9f4; /* Azul ainda mais vibrante para detalhes */
+    --text-color: #ffffff; /* Cor do texto principal (branco) */
+    --light-text: #cfd8dc; /* Cor do texto secundário (cinza claro) */
+    --background: #000000; /* Preto puro para o fundo */
+    --section-bg: #121212; /* Cinza muito escuro para seções */
+    --transition: all 0.3s ease; /* Transição suave para efeitos */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+/* Estilos globais (Reset e configurações básicas) */
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+    box-sizing: border-box; /* Garante que o padding não afete o tamanho */
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar em links */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Fonte padrão */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    color: var(--text-color); /* Cor do texto */
+    background: var(--background); /* Cor de fundo */
+}
+
+/* Container (Largura máxima e margens) */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 2rem; /* Espaçamento nas laterais */
+}
+
+/* Estilos do cabeçalho (Header) */
+header {
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95); /* Preto com transparência */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.header-container {
+    display: flex; /* Alinha os elementos horizontalmente */
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: center; /* Alinha verticalmente */
+    height: 80px; /* Altura do cabeçalho */
+}
+
+.logo {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    font-weight: 700; /* Negrito */
+    color: var(--primary-color); /* Cor do logo */
+    text-decoration: none; /* Remove sublinhado */
+    transition: var(--transition); /* Transição suave */
+}
+
+.logo:hover {
+    color: var(--secondary-color); /* Cor do logo no hover */
+}
+
+nav ul {
+    display: flex; /* Alinha os itens horizontalmente */
+    gap: 2rem; /* Espaçamento entre os itens */
+    list-style: none; /* Remove marcadores da lista */
+    background: transparent; /* Fundo transparente */
+}
+
+nav a {
+    color: var(--text-color); /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 500; /* Peso da fonte */
+    transition: var(--transition); /* Transição suave */
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--secondary-color); /* Cor dos links no hover */
+}
+
+/* Estilos da seção Hero (Principal) */
+.hero {
+    padding: 160px 0 80px; /* Espaçamento superior e inferior */
+    background: linear-gradient(135deg, #121212 0%, #000000 100%); /* Gradiente sutil */
+}
+
+.hero-container {
+    display: grid; /* Layout em grade */
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 4rem; /* Espaçamento entre as colunas */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.hero-content {
+    max-width: 600px; /* Largura máxima do conteúdo */
+}
+
+.hero-subtitle {
+    font-size: 1.25rem; /* Tamanho da fonte */
+    color: var(--primary-color); /* Cor do subtítulo */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    display: block; /* Garante que ocupe toda a largura */
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Tamanho da fonte */
+    line-height: 1.2; /* Espaçamento entre linhas */
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
+}
+
+.hero-title span {
+    color: var(--primary-color); /* Cor do texto destacado */
+}
+
+.hero-description {
+    font-size: 1.125rem; /* Tamanho da fonte */
+    color: var(--light-text); /* Cor da descrição */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+}
+
+.hero-buttons {
+    display: flex; /* Alinha os botões horizontalmente */
+    gap: 1rem; /* Espaçamento entre os botões */
+}
+
+/* Estilos dos botões */
+.btn {
+    display: inline-block; /* Permite definir largura e altura */
+    padding: 1rem 2rem; /* Espaçamento interno */
+    background: var(--primary-color); /* Azul vibrante para botões */
+    color: #000; /* Texto preto */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 8px; /* Borda arredondada */
+    font-weight: 500; /* Peso da fonte */
+    transition: var(--transition); /* Transição suave */
+    border: none; /* Remove borda padrão */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.btn:hover {
+    background: var(--secondary-color); /* Azul mais claro ao passar o mouse */
+    transform: translateY(-3px); /* Leve elevação */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6); /* Sombra mais forte no hover */
+}
+
+.btn-outline {
+    background: transparent; /* Fundo transparente */
+    border: 2px solid var(--primary-color); /* Borda azul vibrante */
+    color: var(--primary-color); /* Cor do texto */
+}
+
+.btn-outline:hover {
+    background: var(--primary-color); /* Fundo azul vibrante ao passar o mouse */
+    color: #000; /* Texto preto */
+}
+
+.hero-image img {
+    width: 100%; /* Largura total */
+    border-radius: 16px; /* Borda arredondada */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* About Section (Sobre) */
+.about {
+    padding: 100px 0; /* Espaçamento superior e inferior */
+    background: var(--background); /* Cor de fundo */
+}
+
+.section-title {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 4rem; /* Espaçamento inferior */
+}
+
+.section-subtitle {
+    color: var(--primary-color); /* Cor do subtítulo */
+    font-size: 1.125rem; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    margin-bottom: 0.5rem; /* Espaçamento inferior */
+    display: block; /* Garante que ocupe toda a largura */
+}
+
+.section-heading {
+    font-size: 2.5rem; /* Tamanho da fonte */
+    color: var(--text-color); /* Cor do título */
+}
+
+.about-container {
+    display: grid; /* Layout em grade */
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 4rem; /* Espaçamento entre as colunas */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.about-image img {
+    width: 100%; /* Largura total */
+    border-radius: 16px; /* Borda arredondada */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.about-stats {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 2rem; /* Espaçamento entre as colunas */
+    margin: 2rem 0; /* Espaçamento superior e inferior */
+}
+
+.stat-item {
+    display: flex; /* Alinha os itens horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 1rem; /* Espaçamento entre os itens */
+}
+
+.stat-icon {
+    width: 48px; /* Largura do ícone */
+    height: 48px; /* Altura do ícone */
+    background: var(--primary-color); /* Azul vibrante para ícones */
+    color: #000; /* Cor preta dentro dos ícones */
+    border-radius: 12px; /* Borda arredondada */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Tamanho da fonte */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+/* Skills Section (Habilidades) */
+.skills {
+    padding: 100px 0; /* Espaçamento superior e inferior */
+    background: var(--section-bg); /* Cor de fundo */
+}
+
+.skills-container {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 2rem; /* Espaçamento entre as colunas */
+}
+
+.skill-card {
+    background: #121212; /* Cinza muito escuro para os cards */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 16px; /* Borda arredondada */
+    box-shadow: var(--shadow); /* Sombra */
+    transition: var(--transition); /* Transição suave */
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Leve elevação no hover */
+}
+
+.skill-icon {
+    width: 64px; /* Largura do ícone */
+    height: 64px; /* Altura do ícone */
+    background: var(--primary-color); /* Azul vibrante para ícones */
+    color: #000; /* Cor preta dentro dos ícones */
+    border-radius: 16px; /* Borda arredondada */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Tamanho da fonte */
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.skill-items {
+    display: flex; /* Alinha os itens horizontalmente */
+    flex-wrap: wrap; /* Quebra a linha se não houver espaço */
+    gap: 0.5rem; /* Espaçamento entre os itens */
+    margin-top: 1rem; /* Espaçamento superior */
+}
+
+.skill-item {
+    background: var(--section-bg); /* Cor de fundo */
+    padding: 0.5rem 1rem; /* Espaçamento interno */
+    border-radius: 20px; /* Borda arredondada */
+    font-size: 0.875rem; /* Tamanho da fonte */
+}
+
+/* Portfolio Section (Portfólio) */
+.portfolio {
+    padding: 100px 0; /* Espaçamento superior e inferior */
+}
+
+.portfolio-filter {
+    display: flex; /* Alinha os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens */
+    gap: 1rem; /* Espaçamento entre os itens */
+    margin-bottom: 3rem; /* Espaçamento inferior */
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    background: var(--section-bg); /* Cor de fundo */
+    border-radius: 25px; /* Borda arredondada */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    transition: var(--transition); /* Transição suave */
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary-color); /* Cor de fundo no hover */
+    color: white; /* Cor do texto no hover */
+}
+
+.portfolio-grid {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 2rem; /* Espaçamento entre as colunas */
+}
+
+.portfolio-item {
+    border-radius: 16px; /* Borda arredondada */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a borda */
+    background: #121212; /* Cinza muito escuro para os cards */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.portfolio-image {
+    position: relative; /* Posição relativa para o overlay */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a borda */
+}
+
+.portfolio-image img {
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+    transition: var(--transition); /* Transição suave */
+}
+
+.portfolio-overlay {
+    position: absolute; /* Posição absoluta em relação ao .portfolio-image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 169, 244, 0.8); /* Azul vibrante com transparência */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espaçamento entre os itens */
+    opacity: 0; /* Inicialmente invisível */
+    transition: var(--transition); /* Transição suave */
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Visível no hover */
+}
+
+.portfolio-link {
+    width: 45px; /* Largura do link */
+    height: 45px; /* Altura do link */
+    background: var(--primary-color); /* Cor de fundo */
+    border-radius: 50%; /* Borda circular */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Cor preta dentro dos links */
+    text-decoration: none; /* Remove sublinhado */
+    transition: var(--transition); /* Transição suave */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.portfolio-link:hover {
+    background: var(--secondary-color); /* Cor de fundo no hover */
+    color: #000; /* Cor preta dentro dos links */
+    transform: translateY(-2px); /* Leve elevação no hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6); /* Sombra mais forte no hover */
+}
+
+.portfolio-content {
+    padding: 1.5rem; /* Espaçamento interno */
+}
+
+.portfolio-category {
+    color: var(--primary-color); /* Cor da categoria */
+    font-size: 0.875rem; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+}
+
+/* Services Section (Serviços) */
+.services {
+    padding: 100px 0; /* Espaçamento superior e inferior */
+    background: var(--section-bg); /* Cor de fundo */
+}
+
+.services-grid {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 2rem; /* Espaçamento entre as colunas */
+}
+
+.service-card {
+    background: #121212; /* Cinza muito escuro para os cards */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 16px; /* Borda arredondada */
+    box-shadow: var(--shadow); /* Sombra */
+    transition: var(--transition); /* Transição suave */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Leve elevação no hover */
+}
+
+.service-icon {
+    width: 64px; /* Largura do ícone */
+    height: 64px; /* Altura do ícone */
+    background: var(--primary-color); /* Azul vibrante para ícones */
+    color: #000; /* Cor preta dentro dos ícones */
+    border-radius: 16px; /* Borda arredondada */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Tamanho da fonte */
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.service-features {
+    list-style: none; /* Remove marcadores da lista */
+    margin-top: 1.5rem; /* Espaçamento superior */
+}
+
+.service-features li {
+    display: flex; /* Alinha os itens horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 0.5rem; /* Espaçamento entre os itens */
+    margin-bottom: 0.5rem; /* Espaçamento inferior */
+}
+
+.service-features i {
+    color: var(--primary-color); /* Cor dos ícones */
+}
+
+/* Testimonials Section (Depoimentos) */
+.testimonials {
+    padding: 100px 0; /* Espaçamento superior e inferior */
+    background: var(--background); /* Cor de fundo */
+}
+
+.testimonials-slider {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 2rem; /* Espaçamento entre as colunas */
+    margin-top: 3rem; /* Espaçamento superior */
+}
+
+.testimonial-item {
+    background: #121212; /* Cinza muito escuro para os cards */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 16px; /* Borda arredondada */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.testimonial-content {
+    font-size: 1.125rem; /* Tamanho da fonte */
+    color: var(--text-color); /* Cor do texto */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+    font-style: italic; /* Estilo itálico */
+}
+
+.testimonial-author {
+    display: flex; /* Alinha os itens horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 1rem; /* Espaçamento entre os itens */
+}
+
+.author-image img {
+    width: 60px; /* Largura da imagem */
+    height: 60px; /* Altura da imagem */
+    border-radius: 50%; /* Borda circular */
+    object-fit: cover; /* Preenche o espaço sem deformar */
+}
+
+/* Contact Section (Contato) */
+.contact {
+    padding: 100px 0; /* Espaçamento superior e inferior */
+}
+
+.contact-container {
+    display: grid; /* Layout em grade */
+    grid-template-columns: 1fr; /* Alterado para uma coluna */
+    gap: 4rem; /* Espaçamento entre as colunas */
+}
+
+.contact-info {
+    background: var(--section-bg); /* Cor de fundo */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 16px; /* Borda arredondada */
+}
+
+.contact-item {
+    display: flex; /* Alinha os itens horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 1rem; /* Espaçamento entre os itens */
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
+}
+
+.contact-icon {
+    width: 48px; /* Largura do ícone */
+    height: 48px; /* Altura do ícone */
+    background: var(--primary-color); /* Azul vibrante para ícones */
+    color: #000; /* Cor preta dentro dos ícones */
+    border-radius: 12px; /* Borda arredondada */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem; /* Tamanho da fonte */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.social-links {
+    display: flex; /* Alinha os itens horizontalmente */
+    gap: 1rem; /* Espaçamento entre os itens */
+    margin-top: 2rem; /* Espaçamento superior */
+}
+
+.social-link {
+    width: 40px; /* Largura do link */
+    height: 40px; /* Altura do link */
+    background: white; /* Cor de fundo */
+    border-radius: 50%; /* Borda circular */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color); /* Cor dos ícones */
+    text-decoration: none; /* Remove sublinhado */
+    transition: var(--transition); /* Transição suave */
+}
+
+.social-link:hover {
+    background: var(--primary-color); /* Cor de fundo no hover */
+    color: white; /* Cor do texto no hover */
+}
+
+.contact-form {
+    background: #121212; /* Cinza muito escuro para os cards */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 16px; /* Borda arredondada */
+    box-shadow: var(--shadow); /* Sombra */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
+}
+
+.form-control {
+    width: 100%; /* Largura total */
+    padding: 1rem; /* Espaçamento interno */
+    border: 1px solid #424242; /* Borda mais escura */
+    border-radius: 8px; /* Borda arredondada */
+    transition: var(--transition); /* Transição suave */
+    background-color: #121212; /* Fundo escuro */
+    color: var(--text-color); /* Cor do texto */
+}
+
+.form-control:focus {
+    outline: none; /* Remove outline padrão */
+    border-color: var(--primary-color); /* Cor da borda no foco */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5); /* Sombra verde */
+}
+
+textarea.form-control {
+    min-height: 150px; /* Altura mínima */
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Footer (Rodapé) */
+footer {
+    background: #000000; /* Preto puro */
+    color: var(--light-text); /* Cor do texto */
+    padding: 4rem 0 0; /* Espaçamento superior e inferior */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil no topo */
+}
+
+.footer-container {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    gap: 2rem; /* Espaçamento entre as colunas */
+    padding-bottom: 4rem; /* Espaçamento inferior */
+}
+
+.footer-logo {
+    color: white; /* Cor do logo */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1.5rem; /* Tamanho da fonte */
+    font-weight: 700; /* Negrito */
+}
+
+.footer-links ul {
+    list-style: none; /* Remove marcadores da lista */
+}
+
+.footer-links a {
+    color: #9ca3af; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    transition: var(--transition); /* Transição suave */
+}
+
+.footer-links a:hover {
+    color: white; /* Cor dos links no hover */
+}
+
+.footer-social {
+    display: flex; /* Alinha os itens horizontalmente */
+    gap: 1rem; /* Espaçamento entre os itens */
+}
+
+.copyright {
+    text-align: center; /* Centraliza o texto */
+    padding: 2rem 0; /* Espaçamento superior e inferior */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil no topo */
+}
+
+/* Floating Buttons (Botões flutuantes) */
+.whatsapp-btn,
+.back-to-top {
+    position: fixed; /* Fixa o botão na tela */
+    right: 20px; /* Distância da borda direita */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    background: var(--primary-color); /* Azul vibrante */
+    color: #000; /* Cor preta dentro dos botões */
+    border-radius: 50%; /* Borda circular */
+    display: flex; /* Alinha os itens horizontalmente e verticalmente */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove sublinhado */
+    transition: var(--transition); /* Transição suave */
+    box-shadow: var(--shadow); /* Sombra */
+    z-index: 99; /* Garante que o botão fique acima de outros elementos */
+}
+
+.whatsapp-btn {
+    bottom: 90px; /* Distância da borda inferior */
+    background: #25d366; /* Cor original do WhatsApp */
+}
+
+.back-to-top {
+    bottom: 20px; /* Distância da borda inferior */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente escondido */
+}
+
+.back-to-top.visible {
+    opacity: 1; /* Visível quando a classe .visible é adicionada */
+    visibility: visible; /* Visível quando a classe .visible é adicionada */
+}
+
+.whatsapp-btn:hover,
+.back-to-top:hover {
+    transform: translateY(-3px); /* Leve elevação no hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6); /* Sombra mais forte no hover */
+}
+
+/* Menu Toggle (Menu para dispositivos móveis) */
+.menu-toggle {
+    display: none; /* Inicialmente escondido */
+    font-size: 1.5rem; /* Tamanho da fonte */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    color: var(--text-color); /* Cor do ícone do menu */
+}
+
+/* Responsive Design (Adaptação para diferentes telas) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem; /* Reduz o tamanho da fonte */
+    }
+    
+    .about-container,
+    .hero-container,
+    .contact-container {
+        grid-template-columns: 1fr; /* Uma coluna */
+        gap: 2rem; /* Espaçamento entre os elementos */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Visível em telas menores */
+    }
+
+    nav ul {
+        position: fixed; /* Fixa o menu na tela */
+        top: 80px; /* Distância do topo */
+        left: 0;
+        width: 100%;
+        background: #121212; /* Cor de fundo escura */
+        flex-direction: column; /* Alinha os itens verticalmente */
+        padding: 2rem; /* Espaçamento interno */
+        gap: 1rem; /* Espaçamento entre os itens */
+        transform: translateY(-100%); /* Inicialmente fora da tela */
+        opacity: 0; /* Inicialmente invisível */
+        visibility: hidden; /* Inicialmente escondido */
+        transition: var(--transition); /* Transição suave */
+    }
+
+    nav ul.active {
+        transform: translateY(0); /* Visível quando a classe .active é adicionada */
+        opacity: 1; /* Visível quando a classe .active é adicionada */
+        visibility: visible; /* Visível quando a classe .active é adicionada */
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr; /* Uma coluna */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .footer-social {
+        justify-content: center; /* Centraliza os ícones */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem; /* Reduz o tamanho da fonte */
+    }
+
+    .section-heading {
+        font-size: 2rem; /* Reduz o tamanho da fonte */
+    }
+
+    .portfolio-filter {
+        flex-wrap: wrap; /* Quebra a linha se não houver espaço */
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Alinha os botões verticalmente */
+    }
+
+    .btn {
+        width: 100%; /* Largura total */
+        text-align: center; /* Centraliza o texto */
+    }
+}
